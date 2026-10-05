@@ -1,0 +1,9 @@
+{
+  "name": "Water Body Survey Result",
+  "abstract": "The result of a water body survey: surface elevation, depth and area.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": ["deep-dive", "survey", "water"]
+}

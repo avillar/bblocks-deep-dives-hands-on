@@ -1,18 +1,18 @@
 # A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+name: OGC Building Blocks Deep Dive
 
 # Short abstract for this collection (optional)
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  Exercise register for the OGC Building Blocks deep-dive video series: a water body survey
+  observation with a custom result and a provenance trace.
 
 # Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag
+  (starting point) and a `<slug>-solved` tag (end state).
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: ogc.deepdive.
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register).
 # An entry can also be an "@org/register" alias (e.g. "@ogc/main", equivalent to "default"),
