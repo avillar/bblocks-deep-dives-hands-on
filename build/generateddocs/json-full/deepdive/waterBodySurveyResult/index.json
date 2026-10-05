@@ -1,0 +1,29 @@
+
+
+{
+  "itemIdentifier": "ogc.deepdive.waterBodySurveyResult",
+  "name": "Water Body Survey Result",
+  "abstract": "The result of a water body survey: surface elevation, depth and area.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": [
+    "deep-dive",
+    "survey",
+    "water"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-10-01",
+  "schema": {
+    "application/yaml": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml",
+    "application/json": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.json"
+  },
+  "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/schema.yaml",
+  "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/resolvedProperties.json",
+  "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/",
+  "validationPassed": true,
+  "annotatedSchema": "title: Water Body Survey Result\ndescription: Result of a water body survey\ntype: object\nproperties:\n  elevation:\n    type: number\n    description: Surface elevation above sea level, in meters\n  depth:\n    type: number\n    description: Depth, in meters\n    minimum: 0\n  area:\n    type: number\n    description: Surface area, in square meters\n    exclusiveMinimum: 0\nanyOf:\n- required:\n  - elevation\n- required:\n  - depth\n- required:\n  - area\nadditionalProperties: false\n",
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
+  "gitPath": "_sources/waterBodySurveyResult"
+}

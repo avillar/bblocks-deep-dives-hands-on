@@ -1,0 +1,39 @@
+{
+  "title": "Water Body Survey Result",
+  "description": "Result of a water body survey",
+  "type": "object",
+  "properties": {
+    "elevation": {
+      "type": "number",
+      "description": "Surface elevation above sea level, in meters"
+    },
+    "depth": {
+      "type": "number",
+      "description": "Depth, in meters",
+      "minimum": 0
+    },
+    "area": {
+      "type": "number",
+      "description": "Surface area, in square meters",
+      "exclusiveMinimum": 0
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "elevation"
+      ]
+    },
+    {
+      "required": [
+        "depth"
+      ]
+    },
+    {
+      "required": [
+        "area"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}

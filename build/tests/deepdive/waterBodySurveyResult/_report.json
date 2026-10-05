@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.deepdive.waterBodySurveyResult - Water Body Survey Result",
+  "bblockName": "Water Body Survey Result",
+  "bblockId": "ogc.deepdive.waterBodySurveyResult",
+  "generated": "2026-10-05T12:57:56.905985+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

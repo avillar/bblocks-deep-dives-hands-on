@@ -1,0 +1,84 @@
+{
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "OGC Building Blocks Deep Dive",
+  "abstract": "Exercise register for the OGC Building Blocks deep-dive video series: a water body survey\nobservation with a custom result and a provenance trace.\n",
+  "description": "Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag\n(starting point) and a `<slug>-solved` tag (end state).\n",
+  "modified": "2026-10-05T12:57:56.709687",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"e64dad0d6a1d0045bec6b1c52f7117632deabfc8",
+      "shortCommitId": "\"e64dad",
+      "date": "2026-10-02T09:28:05+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
+  "gitHubRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on/blob/master/",
+  "baseURL": "https://avillar.github.io/bblocks-deep-dives-hands-on/",
+  "viewerURL": "https://avillar.github.io/bblocks-deep-dives-hands-on/",
+  "validationReport": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.html",
+  "validationReportJson": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.deepdive.waterBodySurveyResult",
+      "name": "Water Body Survey Result",
+      "abstract": "The result of a water body survey: surface elevation, depth and area.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-01T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "deep-dive",
+        "survey",
+        "water"
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2026-10-01",
+      "schema": {
+        "application/yaml": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml",
+        "application/json": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.json"
+      },
+      "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/schema.yaml",
+      "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/resolvedProperties.json",
+      "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurveyResult/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurveyResult/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurveyResult"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}
