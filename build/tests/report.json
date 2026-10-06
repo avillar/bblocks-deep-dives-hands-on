@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total": 1,
-    "passed": 1,
+    "total": 2,
+    "passed": 2,
     "failed": 0,
     "result": true
   },
@@ -10,7 +10,21 @@
       "title": "Validation report for ogc.deepdive.waterBodySurveyResult - Water Body Survey Result",
       "bblockName": "Water Body Survey Result",
       "bblockId": "ogc.deepdive.waterBodySurveyResult",
-      "generated": "2026-10-05T12:57:56.905985+00:00",
+      "generated": "2026-10-06T15:48:47.259978+00:00",
+      "result": true,
+      "items": [],
+      "globalErrors": {},
+      "counts": {
+        "total": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    },
+    "ogc.deepdive.waterBodySurvey": {
+      "title": "Validation report for ogc.deepdive.waterBodySurvey - Water Body Survey",
+      "bblockName": "Water Body Survey",
+      "bblockId": "ogc.deepdive.waterBodySurvey",
+      "generated": "2026-10-06T15:48:47.805190+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},

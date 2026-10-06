@@ -1,0 +1,51 @@
+
+
+{
+  "itemIdentifier": "ogc.deepdive.waterBodySurvey",
+  "name": "Water Body Survey",
+  "abstract": "A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": [
+    "deep-dive",
+    "survey",
+    "water",
+    "observation",
+    "provenance"
+  ],
+  "shaclShapes": {
+    "ogc.model.cross-domain.prov": [
+      "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+    ],
+    "ogc.geo.features.feature": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+    ],
+    "ogc.sosa.properties.execution": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+    ],
+    "ogc.sosa.properties.observation": [
+      "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+    ]
+  },
+  "dependsOn": [
+    "ogc.ogc-utils.iri-or-curie",
+    "ogc.deepdive.waterBodySurveyResult",
+    "ogc.ogc-utils.prov-entity",
+    "ogc.sosa.features.observation"
+  ],
+  "dateOfLastChange": "2026-10-01",
+  "schema": {
+    "application/yaml": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml",
+    "application/json": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json"
+  },
+  "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurvey/schema.yaml",
+  "ldContext": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld",
+  "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/resolvedProperties.json",
+  "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurvey/",
+  "validationPassed": true,
+  "annotatedSchema": "title: Water Body Survey\ndescription: A survey of a water body, as an observation feature with a custom result\n  and provenance\nallOf:\n- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml\n- $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml\n- type: object\n  properties:\n    properties:\n      type: object\n      properties:\n        hasFeatureOfInterest:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n        hasResult:\n          $ref: https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml\n      required:\n      - resultTime\n      - hasFeatureOfInterest\n      - observedProperty\n      - hasResult\n",
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
+  "gitPath": "_sources/waterBodySurvey"
+}

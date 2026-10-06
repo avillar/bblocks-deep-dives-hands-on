@@ -213,12 +213,12 @@
   "name": "Building Blocks - OGC Building Blocks Deep Dive",
   "abstract": "Exercise register for the OGC Building Blocks deep-dive video series: a water body survey\nobservation with a custom result and a provenance trace.\n",
   "description": "Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag\n(starting point) and a `<slug>-solved` tag (end state).\n",
-  "modified": "2026-10-05T12:57:56.709687",
+  "modified": "2026-10-06T15:48:42.592467",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"e64dad0d6a1d0045bec6b1c52f7117632deabfc8",
-      "shortCommitId": "\"e64dad",
-      "date": "2026-10-02T09:28:05+00:00\""
+      "commitId": "\"61586a2bc19ebf936b761c53d9a886e719c1f312",
+      "shortCommitId": "\"61586a",
+      "date": "2026-10-06T15:23:00+00:00\""
     }
   },
   "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
@@ -228,7 +228,9 @@
   "validationReport": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.html",
   "validationReportJson": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.json",
   "imports": [
-    "https://opengeospatial.github.io/bblocks/register.json"
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://opengeospatial.github.io/ogcapi-sosa/build/register.json",
+    "https://ogcincubator.github.io/bblock-prov-schema/build/register.json"
   ],
   "remoteCacheDir": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/_cache",
   "links": [
@@ -322,11 +324,128 @@
       "skos:topConceptOf": {
         "@id": "https://avillar.github.io/bblocks-deep-dives-hands-on/"
       }
+    },
+    {
+      "itemIdentifier": "ogc.deepdive.waterBodySurvey",
+      "name": "Water Body Survey",
+      "abstract": "A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-01T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "deep-dive",
+        "survey",
+        "water",
+        "observation",
+        "provenance"
+      ],
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.model.cross-domain.prov",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.execution",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.iri-or-curie",
+        "bblocks://ogc.deepdive.waterBodySurveyResult",
+        "bblocks://ogc.ogc-utils.prov-entity",
+        "bblocks://ogc.sosa.features.observation"
+      ],
+      "dateOfLastChange": "2026-10-01",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurvey/schema.yaml",
+      "ldContext": {
+        "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/resolvedProperties.json",
+      "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurvey/",
+      "validationPassed": true,
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurvey/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurvey/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurvey"
+        }
+      },
+      "@id": "bblocks://ogc.deepdive.waterBodySurvey",
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Water Body Survey",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://avillar.github.io/bblocks-deep-dives-hands-on/"
+      }
     }
   ],
   "skos:hasTopConcept": [
     {
       "@id": "bblocks://ogc.deepdive.waterBodySurveyResult"
+    },
+    {
+      "@id": "bblocks://ogc.deepdive.waterBodySurvey"
     }
   ]
 }

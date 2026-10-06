@@ -1,0 +1,34 @@
+{
+  "title": "Water Body Survey",
+  "description": "A survey of a water body, as an observation feature with a custom result and provenance",
+  "allOf": [
+    {
+      "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
+    },
+    {
+      "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "hasFeatureOfInterest": {
+              "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
+            },
+            "hasResult": {
+              "$ref": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.json"
+            }
+          },
+          "required": [
+            "resultTime",
+            "hasFeatureOfInterest",
+            "observedProperty",
+            "hasResult"
+          ]
+        }
+      }
+    }
+  ]
+}

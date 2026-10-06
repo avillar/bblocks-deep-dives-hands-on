@@ -16,3 +16,9 @@ Built step by step in the Hands-on videos of the series. Each video has a `<slug
 
 The result of a water body survey: surface elevation, depth and area.
 
+### `ogc.deepdive.waterBodySurvey` — Water Body Survey
+
+**Type:** schema
+
+A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace.
+

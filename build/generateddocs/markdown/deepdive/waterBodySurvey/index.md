@@ -1,0 +1,893 @@
+
+# Water Body Survey (Schema)
+
+`ogc.deepdive.waterBodySurvey` *v0.1*
+
+A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace.
+
+[*Status*](http://www.opengis.net/def/status): Under development
+
+## Schema
+
+```yaml
+title: Water Body Survey
+description: A survey of a water body, as an observation feature with a custom result
+  and provenance
+allOf:
+- $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
+- $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+- type: object
+  properties:
+    properties:
+      type: object
+      properties:
+        hasFeatureOfInterest:
+          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+        hasResult:
+          $ref: https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml
+      required:
+      - resultTime
+      - hasFeatureOfInterest
+      - observedProperty
+      - hasResult
+
+```
+
+Links to the schema:
+
+* YAML version: [schema.yaml](https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json)
+* JSON version: [schema.json](https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "sosa:hasMember",
+      "@type": "@id"
+    },
+    "type": "@type",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": "geojson:geometry",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "links": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "oa:hasTarget"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "featureType": "@type",
+    "time": {
+      "@context": {
+        "date": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:date"
+        },
+        "timestamp": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:dateTime"
+        },
+        "interval": {
+          "@id": "owlTime:hasTime",
+          "@container": "@list"
+        }
+      },
+      "@id": "dct:time"
+    },
+    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
+    "place": "dct:spatial",
+    "Polyhedron": "geojson:Polyhedron",
+    "MultiPolyhedron": "geojson:MultiPolyhedron",
+    "Prism": {
+      "@id": "geojson:Prism",
+      "@context": {
+        "base": "geojson:prismBase",
+        "lower": "geojson:prismLower",
+        "upper": "geojson:prismUpper"
+      }
+    },
+    "MultiPrism": {
+      "@id": "geojson:MultiPrism",
+      "@context": {
+        "prisms": "geojson:prisms"
+      }
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "geometries": {
+      "@id": "geojson:geometry",
+      "@container": "@list"
+    },
+    "ActuatableProperty": {
+      "@id": "sosa:ActuatableProperty",
+      "@type": "@id"
+    },
+    "Actuation": {
+      "@id": "sosa:Actuation",
+      "@type": "@id"
+    },
+    "ActuationCollection": {
+      "@id": "sosa:ActuationCollection",
+      "@type": "@id"
+    },
+    "Actuator": {
+      "@id": "sosa:Actuator",
+      "@type": "@id"
+    },
+    "Deployment": {
+      "@id": "sosa:Deployment",
+      "@type": "@id"
+    },
+    "Execution": {
+      "@id": "sosa:Execution",
+      "@type": "@id"
+    },
+    "FeatureOfInterest": {
+      "@id": "sosa:FeatureOfInterest",
+      "@type": "@id"
+    },
+    "ObservableProperty": {
+      "@id": "sosa:ObservableProperty",
+      "@type": "@id"
+    },
+    "Observation": {
+      "@id": "sosa:Observation",
+      "@type": "@id"
+    },
+    "ObservationCollection": {
+      "@id": "sosa:ObservationCollection",
+      "@type": "@id"
+    },
+    "Platform": {
+      "@id": "sosa:Platform",
+      "@type": "@id"
+    },
+    "Property": {
+      "@id": "sosa:Property",
+      "@type": "@id"
+    },
+    "Procedure ": {
+      "@id": "sosa:Procedure",
+      "@type": "@id"
+    },
+    "Sample": {
+      "@id": "sosa:Sample",
+      "@type": "@id"
+    },
+    "SampleCollection": {
+      "@id": "sosa:SampleCollection",
+      "@type": "@id"
+    },
+    "Sampler": {
+      "@id": "sosa:Sampler",
+      "@type": "@id"
+    },
+    "Sampling": {
+      "@id": "sosa:Sampling",
+      "@type": "@id"
+    },
+    "Sensor": {
+      "@id": "sosa:Sensor",
+      "@type": "@id"
+    },
+    "Stimulus": {
+      "@id": "sosa:Stimulus",
+      "@type": "@id"
+    },
+    "System": {
+      "@id": "sosa:System",
+      "@type": "@id"
+    },
+    "actsOn": {
+      "@id": "sosa:actsOn",
+      "@type": "@id"
+    },
+    "actsOnProperty": {
+      "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "deployedAsset": {
+      "@id": "sosa:deployedAsset",
+      "@type": "@id"
+    },
+    "deployedOnPlatform": {
+      "@id": "sosa:deployedOnPlatform",
+      "@type": "@id"
+    },
+    "deployedSystem": {
+      "@id": "sosa:deployedSystem",
+      "@type": "@id"
+    },
+    "detects": {
+      "@id": "sosa:detects",
+      "@type": "@id"
+    },
+    "forProperty": {
+      "@id": "sosa:forProperty",
+      "@type": "@id"
+    },
+    "hasDeployment": {
+      "@id": "sosa:hasDeployment",
+      "@type": "@id"
+    },
+    "hasInput": {
+      "@id": "sosa:hasInput",
+      "@type": "@id"
+    },
+    "hasMember": {
+      "@id": "sosa:hasMember",
+      "@type": "@id"
+    },
+    "hasOriginalSample": {
+      "@id": "sosa:hasOriginalSample",
+      "@type": "@id"
+    },
+    "hasOutput": {
+      "@id": "sosa:hasOutput",
+      "@type": "@id"
+    },
+    "hasProperty": {
+      "@id": "sosa:hasProperty",
+      "@type": "@id"
+    },
+    "hasResultQuality": {
+      "@id": "sosa:hasResultQuality",
+      "@type": "@id"
+    },
+    "hasSample": {
+      "@id": "sosa:hasSample",
+      "@type": "@id"
+    },
+    "hasSampledFeature": {
+      "@id": "sosa:hasSampledFeature",
+      "@type": "@id"
+    },
+    "hasSubSystem": {
+      "@id": "sosa:hasSubSystem",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hosts": {
+      "@id": "sosa:hosts",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "implementedBy": {
+      "@id": "sosa:implementedBy",
+      "@type": "@id"
+    },
+    "implements": {
+      "@id": "sosa:implements",
+      "@type": "@id"
+    },
+    "inDeployment": {
+      "@id": "sosa:inDeployment",
+      "@type": "@id"
+    },
+    "isActedOnBy": {
+      "@id": "sosa:isActedOnBy",
+      "@type": "@id"
+    },
+    "isFeatureOfInterestOf": {
+      "@id": "sosa:isFeatureOfInterestOf",
+      "@type": "@id"
+    },
+    "isHostedBy": {
+      "@id": "sosa:isHostedBy",
+      "@type": "@id"
+    },
+    "isObservedBy": {
+      "@id": "sosa:isObservedBy",
+      "@type": "@id"
+    },
+    "isOriginalSampleOf": {
+      "@id": "sosa:isOriginalSampleOf",
+      "@type": "@id"
+    },
+    "isPropertyOf": {
+      "@id": "sosa:isPropertyOf",
+      "@type": "@id"
+    },
+    "isProxyFor": {
+      "@id": "sosa:isProxyFor",
+      "@type": "@id"
+    },
+    "isResultOf": {
+      "@id": "sosa:isResultOf",
+      "@type": "@id"
+    },
+    "isResultOfMadeBySampler": {
+      "@id": "sosa:isResultOfMadeBySampler",
+      "@type": "@id"
+    },
+    "isResultOfUsedProcedure": {
+      "@id": "sosa:isResultOfUsedProcedure",
+      "@type": "@id"
+    },
+    "isSampleOf": {
+      "@id": "sosa:isSampleOf",
+      "@type": "@id"
+    },
+    "isSampleOfUltimateFOI": {
+      "@id": "sosa:isSampleOfUltimateFOI",
+      "@type": "@id"
+    },
+    "isSubSystemOf": {
+      "@id": "sosa:isSubSystemOf",
+      "@type": "@id"
+    },
+    "madeActuation": {
+      "@id": "sosa:madeActuation",
+      "@type": "@id"
+    },
+    "madeByActuator": {
+      "@id": "sosa:madeByActuator",
+      "@type": "@id"
+    },
+    "madeBySampler": {
+      "@id": "sosa:madeBySampler",
+      "@type": "@id"
+    },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
+    },
+    "madeBySystem": {
+      "@id": "sosa:madeBySystem",
+      "@type": "@id"
+    },
+    "madeExecution": {
+      "@id": "sosa:madeExecution",
+      "@type": "@id"
+    },
+    "madeObservation": {
+      "@id": "sosa:madeObservation",
+      "@type": "@id"
+    },
+    "madeSampling": {
+      "@id": "sosa:madeSampling",
+      "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
+    },
+    "observes": {
+      "@id": "sosa:observes",
+      "@type": "@id"
+    },
+    "wasOriginatedBy": {
+      "@id": "sosa:wasOriginatedBy",
+      "@type": "@id"
+    },
+    "Accuracy": {
+      "@id": "ssn-system:Accuracy",
+      "@type": "@id"
+    },
+    "ActuationRange": {
+      "@id": "ssn-system:ActuationRange",
+      "@type": "@id"
+    },
+    "BatteryLifetime": {
+      "@id": "ssn-system:BatteryLifetime",
+      "@type": "@id"
+    },
+    "DetectionLimit": {
+      "@id": "ssn-system:DetectionLimit",
+      "@type": "@id"
+    },
+    "Drift": {
+      "@id": "ssn-system:Drift",
+      "@type": "@id"
+    },
+    "Frequency": {
+      "@id": "ssn-system:Frequency",
+      "@type": "@id"
+    },
+    "Latency": {
+      "@id": "ssn-system:Latency",
+      "@type": "@id"
+    },
+    "MaintenanceSchedule": {
+      "@id": "ssn-system:MaintenanceSchedule",
+      "@type": "@id"
+    },
+    "MeasurementRange": {
+      "@id": "ssn-system:MeasurementRange",
+      "@type": "@id"
+    },
+    "OperatingPowerRange": {
+      "@id": "ssn-system:OperatingPowerRange",
+      "@type": "@id"
+    },
+    "OperatingProperty": {
+      "@id": "ssn-system:OperatingProperty",
+      "@type": "@id"
+    },
+    "OperatingRange": {
+      "@id": "ssn-system:OperatingRange",
+      "@type": "@id"
+    },
+    "Precision": {
+      "@id": "ssn-system:Precision",
+      "@type": "@id"
+    },
+    "Resolution": {
+      "@id": "ssn-system:Resolution",
+      "@type": "@id"
+    },
+    "ResponseTime": {
+      "@id": "ssn-system:ResponseTime",
+      "@type": "@id"
+    },
+    "Selectivity": {
+      "@id": "ssn-system:Selectivity",
+      "@type": "@id"
+    },
+    "Sensitivity": {
+      "@id": "ssn-system:Sensitivity",
+      "@type": "@id"
+    },
+    "SurvivalProperty": {
+      "@id": "ssn-system:SurvivalProperty",
+      "@type": "@id"
+    },
+    "SystemLifetime": {
+      "@id": "ssn-system:SystemLifetime",
+      "@type": "@id"
+    },
+    "SurvivalRange": {
+      "@id": "ssn-system:SurvivalRange",
+      "@type": "@id"
+    },
+    "SystemCapability": {
+      "@id": "ssn-system:SystemCapability",
+      "@type": "@id"
+    },
+    "SystemProperty": {
+      "@id": "ssn-system:SystemProperty",
+      "@type": "@id"
+    },
+    "hasOperatingProperty": {
+      "@id": "ssn-system:hasOperatingProperty",
+      "@type": "@id"
+    },
+    "hasOperatingRange": {
+      "@id": "ssn-system:hasOperatingRange",
+      "@type": "@id"
+    },
+    "hasSurvivalProperty": {
+      "@id": "ssn-system:hasSurvivalProperty",
+      "@type": "@id"
+    },
+    "hasSystemCapability": {
+      "@id": "ssn-system:hasSystemCapability",
+      "@type": "@id"
+    },
+    "hasSystemProperty": {
+      "@id": "ssn-system:hasSystemProperty",
+      "@type": "@id"
+    },
+    "hasSurvivalRange": {
+      "@id": "ssn-system:hasSurvivalRange",
+      "@type": "@id"
+    },
+    "inCondition": {
+      "@id": "ssn-system:inCondition",
+      "@type": "@id"
+    },
+    "qualityOfObservation": {
+      "@id": "ssn-system:qualityOfObservation",
+      "@type": "@id"
+    },
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": {
+      "@id": "sosa:phenomenonTime",
+      "@type": "@id"
+    },
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "hasUltimateFeatureOfInterest": {
+      "@id": "sosa:hasUltimateFeatureOfInterest",
+      "@type": "@id"
+    },
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "startTime": "sosa:startTime",
+    "endTime": "sosa:endTime",
+    "hasResult": {
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "@id"
+    },
+    "hasInputValue": {
+      "@id": "sosa:hasInputValue",
+      "@type": "@id"
+    },
+    "wasInfluencedBy": {
+      "@id": "prov:wasInfluencedBy",
+      "@type": "@id"
+    },
+    "qualifiedInfluence": {
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "provType": "@type",
+    "entityType": "@type",
+    "has_provenance": {
+      "@id": "dct:provenance",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "prov:alternateOf",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@id": "prov:hadPrimarySource",
+      "@type": "@id"
+    },
+    "specializationOf": {
+      "@id": "prov:specializationOf",
+      "@type": "@id"
+    },
+    "wasInvalidatedBy": {
+      "@id": "prov:wasInvalidatedBy",
+      "@type": "@id"
+    },
+    "wasQuotedFrom": {
+      "@id": "prov:wasQuotedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "invalidatedAtTime": {
+      "@id": "prov:invalidatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "value": "prov:value",
+    "qualifiedPrimarySource": {
+      "@id": "prov:qualifiedPrimarySource",
+      "@type": "@id"
+    },
+    "qualifiedQuotation": {
+      "@id": "prov:qualifiedQuotation",
+      "@type": "@id"
+    },
+    "qualifiedRevision": {
+      "@id": "prov:qualifiedRevision",
+      "@type": "@id"
+    },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
+    "qualifiedGeneration": {
+      "@id": "prov:qualifiedGeneration",
+      "@type": "@id"
+    },
+    "qualifiedInvalidation": {
+      "@id": "prov:qualifiedInvalidation",
+      "@type": "@id"
+    },
+    "qualifiedDerivation": {
+      "@id": "prov:qualifiedDerivation",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "activityType": "@type",
+    "agentType": "@type",
+    "Activity": "prov:Activity",
+    "ActivityInfluence": "prov:ActivityInfluence",
+    "Agent": "prov:Agent",
+    "AgentInfluence": "prov:AgentInfluence",
+    "Association": "prov:Association",
+    "Attribution": "prov:Attribution",
+    "Bundle": "prov:Bundle",
+    "Collection": "prov:Collection",
+    "Communication": "prov:Communication",
+    "Delegation": "prov:Delegation",
+    "Derivation": "prov:Derivation",
+    "EmptyCollection": "prov:EmptyCollection",
+    "End": "prov:End",
+    "Entity": "prov:Entity",
+    "EntityInfluence": "prov:EntityInfluence",
+    "Generation": "prov:Generation",
+    "Influence": "prov:Influence",
+    "InstantaneousEvent": "prov:InstantaneousEvent",
+    "Invalidation": "prov:Invalidation",
+    "Location": "prov:Location",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "Plan": "prov:Plan",
+    "PrimarySource": "prov:PrimarySource",
+    "Quotation": "prov:Quotation",
+    "Revision": "prov:Revision",
+    "Role": "prov:Role",
+    "SoftwareAgent": "prov:SoftwareAgent",
+    "Start": "prov:Start",
+    "Usage": "prov:Usage",
+    "ServiceDescription": "prov:ServiceDescription",
+    "DirectQueryService": "prov:DirectQueryService",
+    "Accept": "prov:Accept",
+    "Contribute": "prov:Contribute",
+    "Contributor": "prov:Contributor",
+    "Copyright": "prov:Copyright",
+    "Create": "prov:Create",
+    "Creator": "prov:Creator",
+    "Modify": "prov:Modify",
+    "Publish": "prov:Publish",
+    "Publisher": "prov:Publisher",
+    "Replace": "prov:Replace",
+    "RightsAssignment": "prov:RightsAssignment",
+    "RightsHolder": "prov:RightsHolder",
+    "Submit": "prov:Submit",
+    "Dictionary": "prov:Dictionary",
+    "EmptyDictionary": "prov:EmptyDictionary",
+    "KeyEntityPair": "prov:KeyEntityPair",
+    "Insertion": "prov:Insertion",
+    "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "provenanceUriTemplate": "prov:provenanceUriTemplate",
+    "pairKey": {
+      "@id": "prov:pairKey",
+      "@type": "rdfs:Literal"
+    },
+    "removedKey": {
+      "@id": "prov:removedKey",
+      "@type": "rdfs:Literal"
+    },
+    "actedOnBehalfOf": {
+      "@id": "prov:actedOnBehalfOf",
+      "@type": "@id"
+    },
+    "agent": {
+      "@id": "prov:agent",
+      "@type": "@id"
+    },
+    "entity": {
+      "@id": "prov:entity",
+      "@type": "@id"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "hadActivity": {
+      "@id": "prov:hadActivity",
+      "@type": "@id"
+    },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
+    "hadGeneration": {
+      "@id": "prov:hadGeneration",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "hadRole": {
+      "@id": "prov:hadRole",
+      "@type": "@id"
+    },
+    "hadUsage": {
+      "@id": "prov:hadUsage",
+      "@type": "@id"
+    },
+    "influenced": {
+      "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id"
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedDelegation": {
+      "@id": "prov:qualifiedDelegation",
+      "@type": "@id"
+    },
+    "qualifiedEnd": {
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedStart": {
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasEndedBy": {
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
+    },
+    "has_anchor": {
+      "@id": "prov:has_anchor",
+      "@type": "@id"
+    },
+    "has_query_service": {
+      "@id": "prov:has_query_service",
+      "@type": "@id"
+    },
+    "describesService": {
+      "@id": "prov:describesService",
+      "@type": "@id"
+    },
+    "pingback": {
+      "@id": "prov:pingback",
+      "@type": "@id"
+    },
+    "dictionary": {
+      "@id": "prov:dictionary",
+      "@type": "@id"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "prov:derivedByInsertionFrom",
+      "@type": "@id"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "prov:derivedByRemovalFrom",
+      "@type": "@id"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "prov:insertedKeyEntityPair",
+      "@type": "@id"
+    },
+    "hadDictionaryMember": {
+      "@id": "prov:hadDictionaryMember",
+      "@type": "@id"
+    },
+    "pairEntity": {
+      "@id": "prov:pairEntity",
+      "@type": "@id"
+    },
+    "qualifiedInsertion": {
+      "@id": "prov:qualifiedInsertion",
+      "@type": "@id"
+    },
+    "qualifiedRemoval": {
+      "@id": "prov:qualifiedRemoval",
+      "@type": "@id"
+    },
+    "asInBundle": {
+      "@id": "prov:asInBundle",
+      "@type": "@id"
+    },
+    "mentionOf": {
+      "@id": "prov:mentionOf",
+      "@type": "@id"
+    },
+    "name": "rdfs:label",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "dct": "http://purl.org/dc/terms/",
+    "owlTime": "http://www.w3.org/2006/time#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn-system": "ssn:systems/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld)
+
+
+# For developers
+
+The source code for this Building Block can be found in the following repository:
+
+* URL: [https://github.com/avillar/bblocks-deep-dives-hands-on](https://github.com/avillar/bblocks-deep-dives-hands-on)
+* Path: `_sources/waterBodySurvey`
+

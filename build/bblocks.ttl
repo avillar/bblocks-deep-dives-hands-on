@@ -10,8 +10,86 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <http://www.w3.org/ns/dx/prof/role/> .
 @prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://ogc.deepdive.waterBodySurvey> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Water Body Survey" ;
+    dct:abstract "A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurvey/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurvey/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurvey> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-10-01"^^xsd:date ;
+    skos:inScheme <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
+    skos:prefLabel "Water Body Survey" ;
+    skos:topConceptOf <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
+    dcat:keyword "deep-dive",
+        "observation",
+        "provenance",
+        "survey",
+        "water" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.execution> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:dependsOn <bblocks://ogc.deepdive.waterBodySurveyResult>,
+        <bblocks://ogc.ogc-utils.iri-or-curie>,
+        <bblocks://ogc.ogc-utils.prov-entity>,
+        <bblocks://ogc.sosa.features.observation> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:Nc80061dd88234781862ba212a43bddcd ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-10-06T15:48:47.937461"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-06T15:48:47.815369"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:35c08a72408a45f820b8a43055558390d1a4ab36" ;
+                    rdfs:seeAlso <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ] ;
+            prov:wasAssociatedWith _:Nc80061dd88234781862ba212a43bddcd ] .
 
 <bblocks://ogc.deepdive.waterBodySurveyResult> a skos:Concept,
         dcat:Dataset,
@@ -22,10 +100,10 @@
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurveyResult/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurveyResult> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurveyResult/index.json> ] ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurveyResult/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurveyResult> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-10-01"^^xsd:date ;
     skos:inScheme <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
@@ -45,21 +123,6 @@
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
-<https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> a prov:Entity ;
-    dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N79a2cda17f644d0a83d150b179e29ab1 ;
-    prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-05T12:57:57.027718"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-05T12:57:56.924874"^^xsd:dateTime ;
-            prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:100acbc8c8d50139f17470f6c892159282c2b9a2" ;
-                    rdfs:seeAlso <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ],
-                [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N79a2cda17f644d0a83d150b179e29ab1 ] .
-
 <https://avillar.github.io/bblocks-deep-dives-hands-on/> a skos:ConceptScheme,
         dcat:Catalog,
         bblocks:BBlocksRegister ;
@@ -70,28 +133,31 @@ observation with a custom result and a provenance trace.
     dct:description """Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag
 (starting point) and a `<slug>-solved` tag (end state).
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-10-05T12:57:56.709687"^^xsd:dateTime ;
-    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
-    skos:hasTopConcept <bblocks://ogc.deepdive.waterBodySurveyResult> ;
+    dct:modified "2026-10-06T15:48:42.592467"^^xsd:dateTime ;
+    owl:imports <https://ogcincubator.github.io/bblock-prov-schema/build/register.json>,
+        <https://opengeospatial.github.io/bblocks/register.json>,
+        <https://opengeospatial.github.io/ogcapi-sosa/build/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.deepdive.waterBodySurvey>,
+        <bblocks://ogc.deepdive.waterBodySurveyResult> ;
     skos:prefLabel "Building Blocks - OGC Building Blocks Deep Dive" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
-            dct:type "text/turtle" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> ],
+            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ],
         [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in JSON format" ;
-            dct:type "application/json" ;
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ] ;
+            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> ] ;
     foaf:homepage <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
     bblocks:hasValidationReport <https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.html> .
 
-_:N79a2cda17f644d0a83d150b179e29ab1 a prov:Agent,
+_:Nc80061dd88234781862ba212a43bddcd a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
-    dct:hasVersion "0.5.35.dev2+g67607e7aa" ;
+    dct:hasVersion "0.5.35" ;
     rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
 
