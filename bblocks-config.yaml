@@ -20,6 +20,8 @@ identifier-prefix: ogc.deepdive.
 # a full register.json URL.
 imports:
   - default
+  - '@ogc/ogcapi-sosa'
+  - '@ogc/prov-schema'
 
 # Meta-registry used to resolve "@org/register" import aliases above (optional).
 # Defaults to the postprocessor's built-in meta-registry if omitted; set to null to disable

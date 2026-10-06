@@ -1,0 +1,9 @@
+{
+  "name": "Water Body Survey",
+  "abstract": "A survey of a water body: a SOSA observation feature with a custom survey result and a PROV provenance trace.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": ["deep-dive", "survey", "water", "observation", "provenance"]
+}
