@@ -1,0 +1,21 @@
+{
+  "@context": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld",
+  "type": "Feature",
+  "featureType": "http://www.w3.org/ns/sosa/Observation",
+  "id": "https://example.com/surveys/test",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      6.55,
+      46.45
+    ]
+  },
+  "properties": {
+    "resultTime": "2026-09-16T08:30:00Z",
+    "hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+    "observedProperty": "http://dbpedia.org/resource/Bathymetry",
+    "hasResult": {
+      "elevation": 372
+    }
+  }
+}

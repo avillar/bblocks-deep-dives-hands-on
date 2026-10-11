@@ -1,0 +1,157 @@
+Validation report for ogc.deepdive.waterBodySurvey - Water Body Survey
+Generated 2026-10-11T12:56:53.327857+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using missing-time-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD missing-time-fail.jsonld created
+Output Turtle missing-time-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'resultTime' is a required property
+
+Failed validating 'required' in schema['allOf'][2]['properties']['properties']:
+    {'properties': {'hasFeatureOfInterest': {'$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},
+                    'hasResult': {'$ref': 'https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml'}},
+     'required': ['resultTime',
+                  'hasFeatureOfInterest',
+                  'observedProperty',
+                  'hasResult'],
+     'type': 'object'}
+
+On instance['properties']:
+    {'hasFeatureOfInterest': 'http://dbpedia.org/resource/Lake_Geneva',
+     'hasResult': {'depth': 310},
+     'observedProperty': 'http://dbpedia.org/resource/Bathymetry'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.w3.org/ns/prov-o
+Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: <https://example.com/surveys/test>
+
+
+** Validation error **
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: <https://www.ogc.org/rules/sosa/#testRequiredTime>
+  	Focus Node: <https://example.com/surveys/test>
+  	Value Node: <https://example.com/surveys/test>
+  	Source Constraint: [ sh:message Literal("sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed") ; sh:select Literal("
+              PREFIX sh: <http://www.w3.org/ns/shacl#>
+              PREFIX sosa: <http://www.w3.org/ns/sosa/>
+              PREFIX geojson: <https://purl.org/geojson/vocab#>
+              SELECT $this (CONCAT(COALESCE(COUNT(?resultTime), 0), ' x sosa:resultTime, ', COALESCE(COUNT(?phenomenonTime), 0), ' x sosa:phenomenonTime') AS ?value) WHERE {
+                  OPTIONAL { $this sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { $this sosa:resultTime ?resultTime}
+                  OPTIONAL { $this sosa:startTime ?startTime }
+                  OPTIONAL { $this sosa:endTime ?endTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:phenomenonTime ?phenomenonTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:resultTime ?resultTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:startTime ?startTime }
+                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:endTime ?endTime }
+              }
+              GROUP BY $this
+              HAVING (count(?resultTime) > 1 || count(?phenomenonTime) > 1 || count(?resultTime) + count(?phenomenonTime) + count(?startTime) + count(?endTime) < 1)
+          ") ]
+  	Message: sosa:resultTime or sosa:phenomenonTime is required, and no more than 1 of each is allowed
+  
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: <https://example.com/surveys/test>
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: <https://example.com/surveys/test>
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: <https://example.com/surveys/test>
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <https://example.com/surveys/test>
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+=== End SHACL ===
+

@@ -7,6 +7,159 @@ A survey of a water body: a SOSA observation feature with a custom survey result
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
+## Examples
+
+### Lake Geneva survey
+A short survey of Lake Geneva, with just the depth as its result.
+#### json
+```json
+{"type": "Feature", "featureType": "http://www.w3.org/ns/sosa/Observation",
+"id": "https://example.com/surveys/lake-geneva-depth",
+"geometry": {"type": "Point", "coordinates": [6.55, 46.45]},
+"properties": {"resultTime": "2026-09-16T08:30:00Z",
+"hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+"observedProperty": "http://dbpedia.org/resource/Bathymetry",
+"hasResult": {"depth": 310}}}
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld",
+  "type": "Feature",
+  "featureType": "http://www.w3.org/ns/sosa/Observation",
+  "id": "https://example.com/surveys/lake-geneva-depth",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      6.55,
+      46.45
+    ]
+  },
+  "properties": {
+    "resultTime": "2026-09-16T08:30:00Z",
+    "hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+    "observedProperty": "http://dbpedia.org/resource/Bathymetry",
+    "hasResult": {
+      "depth": 310
+    }
+  }
+}
+```
+
+#### ttl
+```ttl
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/surveys/lake-geneva-depth> a sosa:Observation,
+        geojson:Feature ;
+    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
+    sosa:hasResult [ ] ;
+    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
+    sosa:resultTime "2026-09-16T08:30:00Z" ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .
+
+
+```
+
+
+### Full survey of Lake Geneva
+A complete survey, with all the result values and its provenance trace.
+#### json
+```json
+{
+  "type": "Feature",
+  "featureType": "http://www.w3.org/ns/sosa/Observation",
+  "id": "https://example.com/surveys/lake-geneva-2026-09",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      6.55,
+      46.45
+    ]
+  },
+  "properties": {
+    "resultTime": "2026-09-16T08:30:00Z",
+    "hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+    "observedProperty": "http://dbpedia.org/resource/Bathymetry",
+    "hasResult": {
+      "elevation": 372,
+      "depth": 310,
+      "area": 580030000
+    }
+  },
+  "wasGeneratedBy": {
+    "id": "https://example.com/activities/bathymetric-survey-2026-09",
+    "provType": "Activity",
+    "startedAtTime": "2026-09-15T08:00:00Z",
+    "endedAtTime": "2026-09-15T16:00:00Z"
+  }
+}
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/context.jsonld",
+  "type": "Feature",
+  "featureType": "http://www.w3.org/ns/sosa/Observation",
+  "id": "https://example.com/surveys/lake-geneva-2026-09",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      6.55,
+      46.45
+    ]
+  },
+  "properties": {
+    "resultTime": "2026-09-16T08:30:00Z",
+    "hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+    "observedProperty": "http://dbpedia.org/resource/Bathymetry",
+    "hasResult": {
+      "elevation": 372,
+      "depth": 310,
+      "area": 580030000
+    }
+  },
+  "wasGeneratedBy": {
+    "id": "https://example.com/activities/bathymetric-survey-2026-09",
+    "provType": "Activity",
+    "startedAtTime": "2026-09-15T08:00:00Z",
+    "endedAtTime": "2026-09-15T16:00:00Z"
+  }
+}
+```
+
+#### ttl
+```ttl
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/surveys/lake-geneva-2026-09> a sosa:Observation,
+        geojson:Feature ;
+    prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;
+    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
+    sosa:hasResult [ ] ;
+    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
+    sosa:resultTime "2026-09-16T08:30:00Z" ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .
+
+<https://example.com/activities/bathymetric-survey-2026-09> a prov:Activity ;
+    prov:endedAtTime "2026-09-15T16:00:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-15T08:00:00+00:00"^^xsd:dateTime .
+
+
+```
+
 ## Schema
 
 ```yaml

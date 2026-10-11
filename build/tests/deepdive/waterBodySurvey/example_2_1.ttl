@@ -1,0 +1,20 @@
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/surveys/lake-geneva-2026-09> a sosa:Observation,
+        geojson:Feature ;
+    prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;
+    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
+    sosa:hasResult [ ] ;
+    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
+    sosa:resultTime "2026-09-16T08:30:00Z" ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .
+
+<https://example.com/activities/bathymetric-survey-2026-09> a prov:Activity ;
+    prov:endedAtTime "2026-09-15T16:00:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-15T08:00:00+00:00"^^xsd:dateTime .
+

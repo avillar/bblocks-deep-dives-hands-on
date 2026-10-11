@@ -213,12 +213,12 @@
   "name": "Building Blocks - OGC Building Blocks Deep Dive",
   "abstract": "Exercise register for the OGC Building Blocks deep-dive video series: a water body survey\nobservation with a custom result and a provenance trace.\n",
   "description": "Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag\n(starting point) and a `<slug>-solved` tag (end state).\n",
-  "modified": "2026-10-06T15:48:42.592467",
+  "modified": "2026-10-11T12:56:39.957615",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"61586a2bc19ebf936b761c53d9a886e719c1f312",
-      "shortCommitId": "\"61586a",
-      "date": "2026-10-06T15:23:00+00:00\""
+      "commitId": "\"d25453cad0e4972e6a638db3dca636f023f9397a",
+      "shortCommitId": "\"d25453",
+      "date": "2026-10-08T14:02:00+00:00\""
     }
   },
   "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
@@ -379,8 +379,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.ogc-utils.iri-or-curie",
         "bblocks://ogc.deepdive.waterBodySurveyResult",
+        "bblocks://ogc.ogc-utils.iri-or-curie",
         "bblocks://ogc.ogc-utils.prov-entity",
         "bblocks://ogc.sosa.features.observation"
       ],
@@ -409,6 +409,7 @@
       "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/resolvedProperties.json",
       "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurvey/",
       "validationPassed": true,
+      "testOutputs": "https://github.com/avillar/bblocks-deep-dives-hands-on/blob/master/build/tests/deepdive/waterBodySurvey/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
