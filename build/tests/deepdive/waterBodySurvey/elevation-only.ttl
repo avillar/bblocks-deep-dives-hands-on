@@ -1,3 +1,4 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -6,7 +7,7 @@
 <https://example.com/surveys/test> a sosa:Observation,
         geojson:Feature ;
     sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ dbo:elevation 3.72e+02 ] ;
     sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
     sosa:resultTime "2026-09-16T08:30:00Z" ;
     geojson:geometry [ a geojson:Point ;

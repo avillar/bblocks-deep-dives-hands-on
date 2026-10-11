@@ -14,16 +14,18 @@
     "water"
   ],
   "shaclShapes": {},
+  "ldContext": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/context.jsonld",
   "dateOfLastChange": "2026-10-01",
   "schema": {
     "application/yaml": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml",
     "application/json": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.json"
   },
   "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/schema.yaml",
+  "sourceLdContext": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/context.jsonld",
   "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/resolvedProperties.json",
   "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/",
   "validationPassed": true,
-  "annotatedSchema": "title: Water Body Survey Result\ndescription: Result of a water body survey\ntype: object\nproperties:\n  elevation:\n    type: number\n    description: Surface elevation above sea level, in meters\n  depth:\n    type: number\n    description: Depth, in meters\n    minimum: 0\n  area:\n    type: number\n    description: Surface area, in square meters\n    exclusiveMinimum: 0\nanyOf:\n- required:\n  - elevation\n- required:\n  - depth\n- required:\n  - area\nadditionalProperties: false\n",
+  "annotatedSchema": "title: Water Body Survey Result\ndescription: Result of a water body survey\ntype: object\nproperties:\n  elevation:\n    type: number\n    description: Surface elevation above sea level, in meters\n    x-jsonld-id: http://dbpedia.org/ontology/elevation\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#double\n  depth:\n    type: number\n    description: Depth, in meters\n    minimum: 0\n    x-jsonld-id: http://dbpedia.org/ontology/depth\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#double\n  area:\n    type: number\n    description: Surface area, in square meters\n    exclusiveMinimum: 0\n    x-jsonld-id: http://dbpedia.org/ontology/area\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#double\nanyOf:\n- required:\n  - elevation\n- required:\n  - depth\n- required:\n  - area\nadditionalProperties: false\nx-jsonld-prefixes:\n  dbo: http://dbpedia.org/ontology/\n  xsd: http://www.w3.org/2001/XMLSchema#\n",
   "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
   "gitPath": "_sources/waterBodySurveyResult"
 }

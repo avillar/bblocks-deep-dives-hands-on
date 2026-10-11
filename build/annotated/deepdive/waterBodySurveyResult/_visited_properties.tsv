@@ -1,0 +1,4 @@
+path	@id	schema
+/elevation	http://dbpedia.org/ontology/elevation	/github/workspace/build/annotated/deepdive/waterBodySurveyResult/schema.yaml
+/depth	http://dbpedia.org/ontology/depth	/github/workspace/build/annotated/deepdive/waterBodySurveyResult/schema.yaml
+/area	http://dbpedia.org/ontology/area	/github/workspace/build/annotated/deepdive/waterBodySurveyResult/schema.yaml

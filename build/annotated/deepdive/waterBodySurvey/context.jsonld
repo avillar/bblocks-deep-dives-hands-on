@@ -820,6 +820,18 @@
       "@type": "@id"
     },
     "name": "rdfs:label",
+    "elevation": {
+      "@id": "dbo:elevation",
+      "@type": "xsd:double"
+    },
+    "depth": {
+      "@id": "dbo:depth",
+      "@type": "xsd:double"
+    },
+    "area": {
+      "@id": "dbo:area",
+      "@type": "xsd:double"
+    },
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",
@@ -831,6 +843,7 @@
     "ssn": "http://www.w3.org/ns/ssn/",
     "prov": "http://www.w3.org/ns/prov#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dbo": "http://dbpedia.org/ontology/",
     "@version": 1.1
   }
 }

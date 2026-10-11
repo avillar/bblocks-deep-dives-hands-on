@@ -49,6 +49,7 @@ A short survey of Lake Geneva, with just the depth as its result.
 
 #### ttl
 ```ttl
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -57,7 +58,7 @@ A short survey of Lake Geneva, with just the depth as its result.
 <https://example.com/surveys/lake-geneva-depth> a sosa:Observation,
         geojson:Feature ;
     sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ dbo:depth 3.1e+02 ] ;
     sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
     sosa:resultTime "2026-09-16T08:30:00Z" ;
     geojson:geometry [ a geojson:Point ;
@@ -137,6 +138,7 @@ A complete survey, with all the result values and its provenance trace.
 
 #### ttl
 ```ttl
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -147,7 +149,9 @@ A complete survey, with all the result values and its provenance trace.
         geojson:Feature ;
     prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;
     sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ dbo:area 5.8003e+08 ;
+            dbo:depth 3.1e+02 ;
+            dbo:elevation 3.72e+02 ] ;
     sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
     sosa:resultTime "2026-09-16T08:30:00Z" ;
     geojson:geometry [ a geojson:Point ;
@@ -1017,6 +1021,18 @@ Links to the schema:
       "@type": "@id"
     },
     "name": "rdfs:label",
+    "elevation": {
+      "@id": "dbo:elevation",
+      "@type": "xsd:double"
+    },
+    "depth": {
+      "@id": "dbo:depth",
+      "@type": "xsd:double"
+    },
+    "area": {
+      "@id": "dbo:area",
+      "@type": "xsd:double"
+    },
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",
@@ -1028,6 +1044,7 @@ Links to the schema:
     "ssn": "http://www.w3.org/ns/ssn/",
     "prov": "http://www.w3.org/ns/prov#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dbo": "http://dbpedia.org/ontology/",
     "@version": 1.1
   }
 }

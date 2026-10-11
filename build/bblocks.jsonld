@@ -213,7 +213,7 @@
   "name": "Building Blocks - OGC Building Blocks Deep Dive",
   "abstract": "Exercise register for the OGC Building Blocks deep-dive video series: a water body survey\nobservation with a custom result and a provenance trace.\n",
   "description": "Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag\n(starting point) and a `<slug>-solved` tag (end state).\n",
-  "modified": "2026-10-11T12:56:39.957615",
+  "modified": "2026-10-11T17:48:44.112368",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"d25453cad0e4972e6a638db3dca636f023f9397a",
@@ -274,6 +274,12 @@
         "water"
       ],
       "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
       "dateOfLastChange": "2026-10-01",
       "schema": [
         {
@@ -290,6 +296,7 @@
         }
       ],
       "sourceSchema": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/schema.yaml",
+      "sourceLdContext": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/context.jsonld",
       "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/resolvedProperties.json",
       "sourceFiles": "https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/",
       "validationPassed": true,
@@ -315,7 +322,6 @@
         "bblocks:BBlock"
       ],
       "skos:prefLabel": "Water Body Survey Result",
-      "ldContext": null,
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],

@@ -5,17 +5,23 @@
   "properties": {
     "elevation": {
       "type": "number",
-      "description": "Surface elevation above sea level, in meters"
+      "description": "Surface elevation above sea level, in meters",
+      "x-jsonld-id": "http://dbpedia.org/ontology/elevation",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#double"
     },
     "depth": {
       "type": "number",
       "description": "Depth, in meters",
-      "minimum": 0
+      "minimum": 0,
+      "x-jsonld-id": "http://dbpedia.org/ontology/depth",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#double"
     },
     "area": {
       "type": "number",
       "description": "Surface area, in square meters",
-      "exclusiveMinimum": 0
+      "exclusiveMinimum": 0,
+      "x-jsonld-id": "http://dbpedia.org/ontology/area",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#double"
     }
   },
   "anyOf": [
@@ -35,5 +41,9 @@
       ]
     }
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "x-jsonld-prefixes": {
+    "dbo": "http://dbpedia.org/ontology/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
 }

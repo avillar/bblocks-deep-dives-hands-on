@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "elevation": {
+      "@id": "dbo:elevation",
+      "@type": "xsd:double"
+    },
+    "depth": {
+      "@id": "dbo:depth",
+      "@type": "xsd:double"
+    },
+    "area": {
+      "@id": "dbo:area",
+      "@type": "xsd:double"
+    },
+    "dbo": "http://dbpedia.org/ontology/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@version": 1.1
+  }
+}

@@ -66,8 +66,8 @@
         {
           "language": "ttl",
           "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/deepdive/waterBodySurvey/example_1_1.ttl",
-          "sizeBytes": 619,
-          "code": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/surveys/lake-geneva-depth> a sosa:Observation,\n        geojson:Feature ;\n    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;\n    sosa:hasResult [ ] ;\n    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;\n    sosa:resultTime \"2026-09-16T08:30:00Z\" ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .\n\n"
+          "sizeBytes": 683,
+          "code": "@prefix dbo: <http://dbpedia.org/ontology/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/surveys/lake-geneva-depth> a sosa:Observation,\n        geojson:Feature ;\n    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;\n    sosa:hasResult [ dbo:depth 3.1e+02 ] ;\n    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;\n    sosa:resultTime \"2026-09-16T08:30:00Z\" ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .\n\n"
         }
       ]
     },
@@ -91,8 +91,8 @@
         {
           "language": "ttl",
           "url": "https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/deepdive/waterBodySurvey/example_2_1.ttl",
-          "sizeBytes": 963,
-          "code": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/surveys/lake-geneva-2026-09> a sosa:Observation,\n        geojson:Feature ;\n    prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;\n    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;\n    sosa:hasResult [ ] ;\n    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;\n    sosa:resultTime \"2026-09-16T08:30:00Z\" ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .\n\n<https://example.com/activities/bathymetric-survey-2026-09> a prov:Activity ;\n    prov:endedAtTime \"2026-09-15T16:00:00+00:00\"^^xsd:dateTime ;\n    prov:startedAtTime \"2026-09-15T08:00:00+00:00\"^^xsd:dateTime .\n\n"
+          "sizeBytes": 1098,
+          "code": "@prefix dbo: <http://dbpedia.org/ontology/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/surveys/lake-geneva-2026-09> a sosa:Observation,\n        geojson:Feature ;\n    prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;\n    sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;\n    sosa:hasResult [ dbo:area 5.8003e+08 ;\n            dbo:depth 3.1e+02 ;\n            dbo:elevation 3.72e+02 ] ;\n    sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;\n    sosa:resultTime \"2026-09-16T08:30:00Z\" ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 6.55e+00 4.645e+01 ) ] .\n\n<https://example.com/activities/bathymetric-survey-2026-09> a prov:Activity ;\n    prov:endedAtTime \"2026-09-15T16:00:00+00:00\"^^xsd:dateTime ;\n    prov:startedAtTime \"2026-09-15T08:00:00+00:00\"^^xsd:dateTime .\n\n"
         }
       ]
     }

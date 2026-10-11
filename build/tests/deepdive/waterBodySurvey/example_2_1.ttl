@@ -1,3 +1,4 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,7 +9,9 @@
         geojson:Feature ;
     prov:wasGeneratedBy <https://example.com/activities/bathymetric-survey-2026-09> ;
     sosa:hasFeatureOfInterest <http://dbpedia.org/resource/Lake_Geneva> ;
-    sosa:hasResult [ ] ;
+    sosa:hasResult [ dbo:area 5.8003e+08 ;
+            dbo:depth 3.1e+02 ;
+            dbo:elevation 3.72e+02 ] ;
     sosa:observedProperty <http://dbpedia.org/resource/Bathymetry> ;
     sosa:resultTime "2026-09-16T08:30:00Z" ;
     geojson:geometry [ a geojson:Point ;
