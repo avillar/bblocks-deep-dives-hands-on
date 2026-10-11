@@ -1,0 +1,19 @@
+{
+  "type": "Feature",
+  "featureType": "http://www.w3.org/ns/sosa/Observation",
+  "id": "https://example.com/surveys/test",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      6.55,
+      46.45
+    ]
+  },
+  "properties": {
+    "hasFeatureOfInterest": "http://dbpedia.org/resource/Lake_Geneva",
+    "observedProperty": "http://dbpedia.org/resource/Bathymetry",
+    "hasResult": {
+      "depth": 310
+    }
+  }
+}
