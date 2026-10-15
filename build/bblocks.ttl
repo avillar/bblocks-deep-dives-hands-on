@@ -2,8 +2,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.w3.org/ns/oa#> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.w3.org/ns/oa#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -37,16 +37,7 @@
         "provenance",
         "survey",
         "water" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
-            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.sosa.properties.execution> ;
             prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl> ;
@@ -57,18 +48,27 @@
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
+            prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
             prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurvey/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://ogc.deepdive.waterBodySurveyResult>,
         <bblocks://ogc.ogc-utils.iri-or-curie>,
         <bblocks://ogc.ogc-utils.prov-entity>,
@@ -78,18 +78,18 @@
 
 <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Nc86f5809b7574f08a474b51668533510 ;
+    prov:wasAttributedTo _:Nb091f3e1ea514dc4ae04aca5b692f319 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-11T17:48:59.595196"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-11T17:48:59.438010"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-15T14:30:19.532827"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-15T14:30:19.383204"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:32bc7c1fba623adf09a8f51fe883ac51a26b8d1d" ;
+                    dct:hasVersion "git:52d478f3b3a7f7af74aff24bd74d71fd04a1493c" ;
                     rdfs:seeAlso <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ] ;
-            prov:wasAssociatedWith _:Nc86f5809b7574f08a474b51668533510 ] .
+            prov:wasAssociatedWith _:Nb091f3e1ea514dc4ae04aca5b692f319 ] .
 
 <bblocks://ogc.deepdive.waterBodySurveyResult> a skos:Concept,
         dcat:Dataset,
@@ -98,12 +98,12 @@
     rdfs:label "Water Body Survey Result" ;
     dct:abstract "The result of a water body survey: surface elevation, depth and area."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurveyResult> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurveyResult/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/json-full/deepdive/waterBodySurveyResult/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/build/generateddocs/markdown/deepdive/waterBodySurveyResult/index.md> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dives-hands-on/bblock/ogc.deepdive.waterBodySurveyResult> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-10-01"^^xsd:date ;
     skos:inScheme <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
@@ -112,18 +112,18 @@
     dcat:keyword "deep-dive",
         "survey",
         "water" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dives-hands-on/build/annotated/deepdive/waterBodySurveyResult/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://avillar.github.io/bblocks-deep-dives-hands-on/_sources/waterBodySurveyResult/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -138,7 +138,7 @@ observation with a custom result and a provenance trace.
     dct:description """Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag
 (starting point) and a `<slug>-solved` tag (end state).
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-10-11T17:48:44.112368"^^xsd:dateTime ;
+    dct:modified "2026-10-15T14:30:07.124918"^^xsd:dateTime ;
     owl:imports <https://ogcincubator.github.io/bblock-prov-schema/build/register.json>,
         <https://opengeospatial.github.io/bblocks/register.json>,
         <https://opengeospatial.github.io/ogcapi-sosa/build/register.json> ;
@@ -147,20 +147,20 @@ observation with a custom result and a provenance trace.
     skos:prefLabel "Building Blocks - OGC Building Blocks Deep Dive" ;
     prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
-            dct:type "text/turtle" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> ],
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://avillar.github.io/bblocks-deep-dives-hands-on/build/bblocks.ttl> ] ;
     foaf:homepage <https://avillar.github.io/bblocks-deep-dives-hands-on/> ;
     bblocks:hasValidationReport <https://avillar.github.io/bblocks-deep-dives-hands-on/build/tests/report.html> .
 
-_:Nc86f5809b7574f08a474b51668533510 a prov:Agent,
+_:Nb091f3e1ea514dc4ae04aca5b692f319 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.36" ;

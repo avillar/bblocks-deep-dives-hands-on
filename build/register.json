@@ -3,12 +3,12 @@
   "name": "OGC Building Blocks Deep Dive",
   "abstract": "Exercise register for the OGC Building Blocks deep-dive video series: a water body survey\nobservation with a custom result and a provenance trace.\n",
   "description": "Built step by step in the Hands-on videos of the series. Each video has a `<slug>-task` tag\n(starting point) and a `<slug>-solved` tag (end state).\n",
-  "modified": "2026-10-11T17:48:44.112368",
+  "modified": "2026-10-15T14:30:07.124918",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"d25453cad0e4972e6a638db3dca636f023f9397a",
-      "shortCommitId": "\"d25453",
-      "date": "2026-10-08T14:02:00+00:00\""
+      "commitId": "\"f470eb472692ab3e5845074dc94405af89b2f182",
+      "shortCommitId": "\"f470eb",
+      "date": "2026-10-14T12:20:08+00:00\""
     }
   },
   "gitRepository": "https://github.com/avillar/bblocks-deep-dives-hands-on",
